@@ -1,0 +1,14 @@
+{
+  "name": "growth_no_growth_probability",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+"mounts": [
+    "source=/Users/junpei/Library/CloudStorage/Dropbox/ファミリー ルーム/hosoe/Github/growth_no_growth_probability,target=/workspace,type=bind"
+],
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter"
+  ]
+}
