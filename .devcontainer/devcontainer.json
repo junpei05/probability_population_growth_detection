@@ -1,11 +1,11 @@
 {
-  "name": "growth_no_growth_probability",
+  "name": "growth_probability_SingleHit",
   "build": {
     "dockerfile": "../Dockerfile"
   },
   "workspaceFolder": "/workspace",
 "mounts": [
-    "source=/Users/junpei/Library/CloudStorage/Dropbox/ファミリー ルーム/hosoe/Github/growth_no_growth_probability,target=/workspace,type=bind"
+    "source=/Users/junpei/Library/CloudStorage/Dropbox/ファミリー ルーム/hosoe/Github/probability_population_growth_detection,target=/workspace,type=bind"
 ],
   "extensions": [
     "ms-python.python",
