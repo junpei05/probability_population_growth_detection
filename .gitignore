@@ -1,1 +1,5 @@
 results/fit_results.pkl
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
