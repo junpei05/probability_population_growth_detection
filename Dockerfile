@@ -8,7 +8,10 @@ FROM python:3.11-slim
 # ==========================================================
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    cabextract \ 
+    cabextract \
+    fontconfig \
+    fonts-noto-cjk \
+    && fc-cache -f -v \
     && rm -rf /var/lib/apt/lists/*
 
 # ==========================================================
