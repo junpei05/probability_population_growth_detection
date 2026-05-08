@@ -15,11 +15,11 @@ where *p* is the per-cell probability of initiating growth under a given stress 
 ```
 probability_population_growth_detection/
 ├── data/
-│   └── data.csv                    # Experimental data (432 rows)
+│   └── data.csv                    # Experimental data (288 data rows)
 ├── scripts/
 │   └── code_all.ipynb              # Model fitting, visualization, result export
 ├── results/
-│   ├── df_model_fit_results.csv    # Estimated p and RMSE per condition
+│   ├── df_model_fit_results.csv    # Estimated p and RMSE per condition (regarding Table 1 & 2)
 │   └── figures/
 │       ├── fig_2.tiff              # E. coli + Glycine
 │       ├── fig_3.tiff              # E. coli + NaCl
