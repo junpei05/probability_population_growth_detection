@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository provides code for modeling the **probability of bacterial population growth detection** using the **exponential single-hit model** (Poisson model). The model estimates, for a given inoculum size *n* (CFU/well), the probability that at least one cell initiates detectable growth:
+This repository provides code for modeling the **probability of bacterial population growth detection** using the **exponential single-hit model**. The model estimates, for a given inoculum size *n* (CFU/well), the probability that at least one cell initiates detectable growth:
 
 $$P(\text{growth} \mid n) = 1 - \exp(-np)$$
 
