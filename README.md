@@ -2,7 +2,7 @@
 
 ## Overview
 Background: <br><br>
-Objectives: The objective of this study is to reveal inoculum effect using cell numbers.<br><br>
+Objectives: To clarify the impact of the inoculum effect on bacterial growth detection using individual cell counts.<br><br>
 Expected outcome: <br><br>
 
 
@@ -13,9 +13,13 @@ This repository contains the code for modeling the probability of bacterial popu
 | Path | Description |
 |------|-------------|
 | `data/` | Raw experimental data (growth/no-growth observations) |
-| `scripts/` | Jupyter notebooks for model fitting and visualization |
-| `results/` | Model fit results (CSV) and output figures (TIFF/PDF) |
+| `scripts/` | Jupyter notebook for model fitting and visualization |
+| `results/` | Output directory for model fit results and figures |
+| `results/df_model_fit_results.csv` | Model fit results (CSV) |
+| `results/figures/` | Output figures (TIFF/PDF) |
 | `.devcontainer/` | VS Code Dev Container configuration |
+| `Dockerfile` | Docker image definition for containerized execution |
+| `requirements.txt` | Python package dependencies |
 
 ## Setup and Dependencies
 
