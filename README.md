@@ -1,25 +1,59 @@
 # probability_population_growth_detection
 
 ## Overview
-Background: <br><br>
-Objectives: To clarify the impact of the inoculum effect on bacterial growth detection using individual cell counts.<br><br>
-Expected outcome: <br><br>
 
+This repository provides code for modeling the **probability of bacterial population growth detection** using the **exponential single-hit model** (Poisson model). The model estimates, for a given inoculum size *n* (CFU/well), the probability that at least one cell initiates detectable growth:
+
+$$P(\text{growth} \mid n) = 1 - \exp(-np)$$
+
+where *p* is the per-cell probability of initiating growth under a given stress condition.
+
+**Objective:** To quantify the inoculum effect on bacterial growth detectability in 96-well plate assays, and to characterize how antimicrobial stress (additive type and concentration) shifts the growth-probability curve as a function of inoculum size.
 
 ## Repository Structure
 
-This repository contains the code for modeling the probability of bacterial population growth detection at the individual cell level, using inoculum size as the explanatory variable.
+```
+probability_population_growth_detection/
+├── data/
+│   └── data.csv                    # Experimental data (432 rows)
+├── scripts/
+│   └── code_all.ipynb              # Model fitting, visualization, result export
+├── results/
+│   ├── df_model_fit_results.csv    # Estimated p and RMSE per condition
+│   └── figures/
+│       ├── fig_2.tiff              # E. coli + Glycine
+│       ├── fig_3.tiff              # E. coli + NaCl
+│       ├── fig_4.tiff              # B. cereus + Glycine
+│       └── fig_5.tiff              # B. cereus + NaCl
+├── .devcontainer/
+│   └── devcontainer.json           # VS Code Dev Container configuration
+├── Dockerfile                      # Docker image for containerized execution
+├── requirements.txt                # Python package dependencies
+└── README.md
+```
 
-| Path | Description |
-|------|-------------|
-| `data/` | Raw experimental data (growth/no-growth observations) |
-| `scripts/` | Jupyter notebook for model fitting and visualization |
-| `results/` | Output directory for model fit results and figures |
-| `results/df_model_fit_results.csv` | Model fit results (CSV) |
-| `results/figures/` | Output figures (TIFF/PDF) |
-| `.devcontainer/` | VS Code Dev Container configuration |
-| `Dockerfile` | Docker image definition for containerized execution |
-| `requirements.txt` | Python package dependencies |
+## Dataset
+
+`data/data.csv` contains 288 experimental records with the following columns:
+
+| Column | Description |
+|--------|-------------|
+| `Inoculum_size_[CFU/well]` | Number of cells inoculated per well |
+| `Glycine_[w/v_%]` | Glycine concentration (% w/v) |
+| `NaCl_[w/v_%]` | NaCl concentration (% w/v) |
+| `Wavelength_[nm]` | Absorbance wavelength used for growth detection |
+| `Bacteria` | Bacterial species (*E. coli* or *B. cereus*) |
+| `Elapsed_time_[days]` | Incubation period (3 or 7 days) |
+| `Number_of_growth_well` | Number of wells (out of 96) showing detectable growth |
+
+The notebook analyzes four experimental conditions:
+
+| Figure | Species | Additive | Stress levels (low / high) |
+|--------|---------|----------|---------------------------|
+| fig_2 | *E. coli* | Glycine | 1.7% / 1.8% (w/v) |
+| fig_3 | *E. coli* | NaCl | 6.5% / 7.0% (w/v) |
+| fig_4 | *B. cereus* | Glycine | 1.4% / 1.6% (w/v) |
+| fig_5 | *B. cereus* | NaCl | 7.0% / 7.5% (w/v) |
 
 ## Setup and Dependencies
 
@@ -57,8 +91,5 @@ jupyter notebook
 | pandas | 2.2.2 | Data handling and manipulation |
 | numpy | 1.26.4 | Numerical computation |
 | scipy | 1.13.1 | Optimization (L-BFGS-B method) |
-| scikit-learn | 1.4.2 | Model evaluation (RMSE) |
 | matplotlib | 3.10.0 | Visualization |
-| seaborn | 0.13.2 | Statistical visualization |
 | jupyter | 1.0.0 | Notebook environment |
-| openpyxl / xlrd | 3.1.2 / 2.0.1 | Excel file support |
