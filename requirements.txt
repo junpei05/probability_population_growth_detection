@@ -1,17 +1,10 @@
 # data handling & analysis
 pandas==2.2.2
-pandas-stubs==2.2.2.240909
 numpy==1.26.4
 scipy==1.13.1
-scikit-learn==1.4.2
 
 # Visualization libraries
 matplotlib==3.10.0
 matplotlib-inline==0.1.7
-seaborn==0.13.2
 
 jupyter==1.0.0
-
-# Excel file support
-openpyxl==3.1.2
-xlrd==2.0.1
