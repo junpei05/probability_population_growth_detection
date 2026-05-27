@@ -19,8 +19,9 @@ probability_population_growth_detection/
 ├── scripts/
 │   └── code_all.ipynb              # Model fitting, visualization, result export
 ├── results/
-│   ├── df_model_fit_results.csv    # Estimated p and RMSE per condition (regarding Table 1 & 2)
+│   ├── df_model_fit_results.csv    # Estimated p, standard error (SE), and RMSE per condition (see Table 1 & 2 in the paper)
 │   └── figures/
+│       ├── Figure_1.pdf              # Design of experiments
 │       ├── Figure_2.pdf              # E. coli + Glycine
 │       ├── Figure_3.pdf              # E. coli + NaCl
 │       ├── Figure_4.pdf              # B. cereus + Glycine
@@ -50,10 +51,10 @@ The notebook analyzes four experimental conditions:
 
 | Figure | Species | Additive | Stress levels (low / high) |
 |--------|---------|----------|---------------------------|
-| fig_2 | *E. coli* | Glycine | 1.7% / 1.8% (w/v) |
-| fig_3 | *E. coli* | NaCl | 6.5% / 7.0% (w/v) |
-| fig_4 | *B. cereus* | Glycine | 1.4% / 1.6% (w/v) |
-| fig_5 | *B. cereus* | NaCl | 7.0% / 7.5% (w/v) |
+| Figure_2 | *E. coli* | Glycine | 1.7% / 1.8% (w/v) |
+| Figure_3 | *E. coli* | NaCl | 6.5% / 7.0% (w/v) |
+| Figure_4 | *B. cereus* | Glycine | 1.4% / 1.6% (w/v) |
+| Figure_5 | *B. cereus* | NaCl | 7.0% / 7.5% (w/v) |
 
 ## Setup and Dependencies
 
