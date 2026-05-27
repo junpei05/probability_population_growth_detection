@@ -1,4 +1,4 @@
-results/
+results/figures/*.tiff
 .DS_Store
 __pycache__/
 .ipynb_checkpoints/
