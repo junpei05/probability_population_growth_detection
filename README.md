@@ -19,12 +19,12 @@ probability_population_growth_detection/
 ├── scripts/
 │   └── code_all.ipynb              # Model fitting, visualization, result export
 ├── results/
-│   ├── df_model_fit_results.csv    # Estimated p and RMSE per condition (regarding Table 1 & 2)
+│   ├── df_model_fit_results_table_1_2.csv    # Estimated p and RMSE per condition (regarding Table 1 & 2)
 │   └── figures/
-│       ├── fig_2.tiff              # E. coli + Glycine
-│       ├── fig_3.tiff              # E. coli + NaCl
-│       ├── fig_4.tiff              # B. cereus + Glycine
-│       └── fig_5.tiff              # B. cereus + NaCl
+│       ├── Figure_2.pdf              # E. coli + Glycine
+│       ├── Figure_3.pdf              # E. coli + NaCl
+│       ├── Figure_4.pdf              # B. cereus + Glycine
+│       └── Figure_5.pdf              # B. cereus + NaCl
 ├── .devcontainer/
 │   └── devcontainer.json           # VS Code Dev Container configuration
 ├── Dockerfile                      # Docker image for containerized execution
