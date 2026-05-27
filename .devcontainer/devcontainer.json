@@ -3,10 +3,7 @@
   "build": {
     "dockerfile": "../Dockerfile"
   },
-  "workspaceFolder": "/workspace",
-"mounts": [
-    "source=/Users/junpei/Library/CloudStorage/Dropbox/ファミリー ルーム/hosoe/Github/probability_population_growth_detection,target=/workspace,type=bind"
-],
+  "workspaceFolder": "/workspaces/probability_population_growth_detection",
   "extensions": [
     "ms-python.python",
     "ms-toolsai.jupyter"
