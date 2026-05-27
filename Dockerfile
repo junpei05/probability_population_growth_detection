@@ -17,12 +17,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # ==========================================================
 # 3) setting work directory "/workspace"
 # ==========================================================
-WORKDIR /workspace
+WORKDIR /workspaces/probability_population_growth_detection
 
 # ==========================================================
 # 4) /workspace files at local directory (Notebook, requirements, etc...) 
 # ==========================================================
-COPY . /workspace
+COPY . /workspaces/probability_population_growth_detection
 
 # ==========================================================
 # 5) installing Python library
@@ -34,6 +34,6 @@ RUN pip install --upgrade pip \
 # 6) setting option (port etc) when running 　Jupyter Notebook 
 # ==========================================================
 EXPOSE 8888
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.notebook_dir=/workspace"]
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.notebook_dir=/workspaces/probability_population_growth_detection"]
 
 
