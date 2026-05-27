@@ -68,6 +68,9 @@ docker build -t growth_probability .
 
 # Run Jupyter Notebook (accessible at http://localhost:8888)
 docker run -p 8888:8888 growth_probability
+
+# With local file sync (edits saved to your machine)
+docker run -p 8888:8888 -v $(pwd):/app growth_probability
 ```
 
 ### Option B: VS Code Dev Container
