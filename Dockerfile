@@ -11,29 +11,23 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     cabextract \
     fontconfig \
     fonts-noto-cjk \
-    && fc-cache -f -v \
     && rm -rf /var/lib/apt/lists/*
 
 # ==========================================================
-# 3) setting work directory "/workspace"
+# 3) installing Python library
 # ==========================================================
-WORKDIR /workspaces/probability_population_growth_detection
-
-# ==========================================================
-# 4) /workspace files at local directory (Notebook, requirements, etc...) 
-# ==========================================================
-COPY . /workspaces/probability_population_growth_detection
-
-# ==========================================================
-# 5) installing Python library
-# ==========================================================
+COPY requirements.txt /tmp/requirements.txt
 RUN pip install --upgrade pip \
-    && pip install --no-cache-dir --retries 10 -r requirements.txt
+    && pip install --no-cache-dir --retries 10 -r /tmp/requirements.txt
 
 # ==========================================================
-# 6) setting option (port etc) when running 　Jupyter Notebook 
+# 4) copy source code for standalone Docker usage
+# ==========================================================
+WORKDIR /app
+COPY . /app
+
+# ==========================================================
+# 5) setting option (port etc) when running Jupyter Notebook 
 # ==========================================================
 EXPOSE 8888
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.notebook_dir=/workspaces/probability_population_growth_detection"]
-
-
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.notebook_dir=/app"]
