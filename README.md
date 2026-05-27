@@ -19,7 +19,7 @@ probability_population_growth_detection/
 ├── scripts/
 │   └── code_all.ipynb              # Model fitting, visualization, result export
 ├── results/
-│   ├── df_model_fit_results_table_1_2.csv    # Estimated p and RMSE per condition (regarding Table 1 & 2)
+│   ├── df_model_fit_results.csv    # Estimated p and RMSE per condition (regarding Table 1 & 2)
 │   └── figures/
 │       ├── Figure_2.pdf              # E. coli + Glycine
 │       ├── Figure_3.pdf              # E. coli + NaCl
