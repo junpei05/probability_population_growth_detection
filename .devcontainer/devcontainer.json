@@ -4,8 +4,12 @@
     "dockerfile": "../Dockerfile"
   },
   "workspaceFolder": "/workspaces/probability_population_growth_detection",
-  "extensions": [
-    "ms-python.python",
-    "ms-toolsai.jupyter"
-  ]
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  }
 }

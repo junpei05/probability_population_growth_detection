@@ -30,4 +30,4 @@ COPY . /app
 # 5) setting option (port etc) when running Jupyter Notebook 
 # ==========================================================
 EXPOSE 8888
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.notebook_dir=/app"]
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--ServerApp.root_dir=/app"]
