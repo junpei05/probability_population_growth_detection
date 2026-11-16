@@ -17,9 +17,7 @@ probability_population_growth_detection/
 ├── data/
 │   └── data.csv                    # Experimental data (288 records)
 ├── scripts/
-│   └── code_all.ipynb              # Model fitting and visualization (Figures 2 and 3)
-├── results/
-│   └── df_model_fit_results.csv    # Estimated p, standard error (SE), 95% CI, and RMSE per condition (see Tables 1 and 2 in the paper)
+│   └── code_all.ipynb              # Model fitting, result table (Tables 1 and 2), and visualization (Figures 2 and 3)
 ├── .devcontainer/
 │   └── devcontainer.json           # VS Code Dev Container configuration
 ├── Dockerfile                      # Docker image for containerized execution
@@ -63,7 +61,7 @@ In each panel, the low stress level is shown as dark red circles and the high st
 
 ## Results
 
-`results/df_model_fit_results.csv` contains the fitted results for all 16 conditions (2 species × 2 additives × 2 stress levels × 2 incubation periods):
+The notebook collects the fitted results for all 16 conditions (2 species × 2 additives × 2 stress levels × 2 incubation periods) in a table (`df_results`) and displays it at the end of each figure cell (see Tables 1 and 2 in the paper). The table has the following columns:
 
 | Column | Description |
 |--------|-------------|
@@ -80,14 +78,22 @@ In each panel, the low stress level is shown as dark red circles and the high st
 | `p_se` | Standard error of *p* |
 | `p_ci95_lower`, `p_ci95_upper` | Lower and upper bounds of the 95% confidence interval of *p* |
 
-The notebook recomputes these values and displays them as a table (`df_results`); it does not write files.
+The notebook does not write files.
 
 ## Usage
 
-1. Set up the environment using one of the options below.
-2. Open `scripts/code_all.ipynb` and run all cells (e.g., **Restart & Run All**).
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/junpei05/probability_population_growth_detection.git
+   cd probability_population_growth_detection
+   ```
+
+   Keep the default directory name; the Dev Container configuration (Option B) expects it.
+2. Set up the environment using one of the options below.
+3. Open `scripts/code_all.ipynb` and run all cells (e.g., **Restart & Run All**).
    The notebook reads `../data/data.csv` relative to the notebook, so run it from the `scripts/` directory (the default in Jupyter and VS Code).
-3. For each figure cell, the notebook prints the estimated *p*, its SE, and the RMSE for each condition, then displays the figure and the result table.
+4. For each figure cell, the notebook prints the estimated *p*, its SE, and the RMSE for each condition, then displays the figure and the result table.
 
 ## Setup and Dependencies
 
@@ -103,7 +109,7 @@ docker build -t growth_probability .
 docker run -p 8888:8888 growth_probability
 
 # With local file sync (edits saved to your machine)
-docker run -p 8888:8888 -v $(pwd):/app growth_probability
+docker run -p 8888:8888 -v "$(pwd)":/app growth_probability
 ```
 
 Open the URL shown in the terminal (`http://127.0.0.1:8888/tree?token=...`) in your browser.
@@ -138,7 +144,7 @@ jupyter notebook
 
 If you use this code or data, please cite:
 
-> (Citation to be added: authors, title, journal, year, DOI)
+> Hosoe, J., Kato, T., Garre, A., Koseki, S., & Koyama, K. (2026). Stochastic modeling of the inoculum size effect on bacterial growth detection. *Food Microbiology*, 105364. https://doi.org/10.1016/j.fm.2026.105364
 
 ## License
 
