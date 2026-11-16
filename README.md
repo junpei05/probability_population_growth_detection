@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository provides code for modeling the **probability of bacterial population growth detection** using the **exponential single-hit model**. The model estimates, for a given inoculum size *n* (CFU/well), the probability that at least one cell initiates detectable growth:
+This repository contains the source code for our paper, [Stochastic modeling of the inoculum size effect on bacterial growth detection](https://doi.org/10.1016/j.fm.2026.105364) (*Food Microbiology*, 2026). We use the **exponential single-hit model** to describe the **probability of bacterial population growth detection**: for a given inoculum size *n* (CFU/well), the probability that at least one cell initiates detectable growth is
 
 $$P(\text{growth} \mid n) = 1 - \exp(-np)$$
 
